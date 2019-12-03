@@ -1,0 +1,46 @@
+
+version: '3'
+
+# list of services
+services:
+
+  # mysql database
+  db:
+    
+    # build the image
+    build: ./db/
+
+    # specify the ports
+    ports:
+    - '9696:3306'
+
+    # specify the volumes
+    # volumes:
+    # - /home/amitk/mean/db/mydb_contents:/var/lib/mysql
+
+
+  # express server
+  server:
+
+    # build the image
+    build: ./my-express-docker/
+
+    # specify the ports
+    ports:
+    - '9797:9797'
+
+
+  # angular application
+  app1:
+
+     # build the image
+     build: ./my-angular-docker/
+
+     # specify the ports
+     ports:
+     - '9898:80'
+
+
+      
+
+
